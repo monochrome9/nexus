@@ -29,6 +29,6 @@ echo "$PROVER_ID" > ~/.nexus/prover-id
 
 sudo apt install -y screen
 
-screen -S nexus bash -c 'curl https://cli.nexus.xyz/ | sh'
+screen -S nexus bash -c 'curl https://cli.nexus.xyz/ | sh; exec bash'
 
-screen -r nexus
+echo "Installation completed. Prover ID saved to ~/.nexus/prover-id."
