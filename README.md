@@ -14,4 +14,4 @@ screen -r nexus
 
 # screen nexus
 
-sudo apt install -y screen git && git clone https://github.com/monochrome9/nexus.git && cd nexus && screen -S nexus -c 'bash nexus-screen.sh'
+sudo apt install -y screen git && git clone https://github.com/monochrome9/nexus.git && cd nexus && screen -S nexus bash ./nexus-screen.sh
