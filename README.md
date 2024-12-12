@@ -6,5 +6,5 @@ sudo apt install -y git && git clone https://github.com/monochrome9/nexus.git &&
 to check the proover:
 screen -r nexus
 
-close the scren:
+close the screen:
 Hold Control+A and press D
