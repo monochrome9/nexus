@@ -29,6 +29,12 @@ curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v25.2/pro
 unzip protoc-25.2-linux-x86_64.zip -d $HOME/.local
 export PATH="$HOME/.local/bin:$PATH"
 
+sudo dd if=/dev/zero of=/swapfile bs=1M count=8192
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+
 mkdir -p ~/.nexus
 echo "$PROVER_ID" > ~/.nexus/node-id
 
