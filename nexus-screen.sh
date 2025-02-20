@@ -13,7 +13,7 @@ fi
 
 sudo apt update && sudo apt upgrade -y
 
-sudo apt install -y build-essential pkg-config libssl-dev git-all
+sudo apt install -y build-essential pkg-config libssl-dev unzip curl screen git-all
 sudo apt install -y protobuf-compiler
 sudo apt install -y cargo
 
@@ -24,7 +24,12 @@ source ~/.bashrc
 
 rustup update
 
+sudo apt remove -y protobuf-compiler
+curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v25.2/protoc-25.2-linux-x86_64.zip
+unzip protoc-25.2-linux-x86_64.zip -d $HOME/.local
+export PATH="$HOME/.local/bin:$PATH"
+
 mkdir -p ~/.nexus
-echo "$PROVER_ID" > ~/.nexus/prover-id
+echo "$PROVER_ID" > ~/.nexus/node-id
 
 curl https://cli.nexus.xyz/ | sh
